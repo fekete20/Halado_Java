@@ -2,47 +2,47 @@ package hu.me.krz.haladojava;
 
 import java.util.List;
 import java.util.Random;
-import hu.me.krz.haladojava.*;
+import hu.me.krz.haladojava.Point;
 
-public class Astronomer  {
-	private List<Planet> DiscoveredPlanets;
+public class Astronomer {
+	private List<Planet> discoveredPlanets;
 	private String name;
 
-
-	public Astronomer(List<Planet> planets, String name) {
-	//	super();
-		this.DiscoveredPlanets = planets;
+	public Astronomer(String name) {
+		// super();
 		this.name = name;
 	}
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
 	public List<Planet> getDiscoveredPlanets() {
-		return DiscoveredPlanets;
+		return discoveredPlanets;
 	}
-	
-	Random r = new Random();
-	
+
 	public void observeTheSky() {
-		List<Planet> lista;
-		Planet p;
-		Point inc;
-		Point pont;
-		
-		//	double[] radius = new double[10];
-		for(int i = 0; i < 10; i++) {
-			inc.x += r.nextInt()%20
-			inc = Translate()
-			p = new Planet();
-			
+
+		Random r = new Random();
+
+		for (int i = 0; i < 10; i++) {
+			double radius = r.nextDouble() * 100;
+			String name = getName() + " " + (i + 1);
+			Point p = new Point(0, 0, 0);
+			Point t = new Point(((i + 1) * 10), 0, 0);
+			p.translate(t);
+
+			Planet[] bolygok = new Planet[10];
+			bolygok[i] = new Planet(p, radius, name);
+
+			System.out.println(bolygok[i]);
+
 		}
 	}
-	
 
-	
+	@Override
+	public String toString() {
+		return "Astronomer [discoveredPlanets=" + discoveredPlanets + ", name=" + name + "]";
+	}
+
 }
