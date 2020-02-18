@@ -14,9 +14,11 @@ public class Proba {
 			db = sc.nextInt();
 
 		} catch (Exception ex) {
-			System.err.println(ex.getMessage());
+			System.err.println("Hiba: " + ex.getMessage());
 			System.exit(-20);
 		}
+
+		sc.close();
 
 		Diak[] diakok = new Diak[db];
 
