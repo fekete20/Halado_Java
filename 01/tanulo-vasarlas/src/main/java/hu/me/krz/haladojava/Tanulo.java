@@ -1,5 +1,7 @@
 package hu.me.krz.haladojava;
 
+import java.util.List;
+
 public class Tanulo {
 
 	private final String name;
@@ -12,6 +14,10 @@ public class Tanulo {
 
 	public int penz() {
 		return money;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	public Tanulo(String name, int money) {
@@ -33,7 +39,7 @@ public class Tanulo {
 
 	@Override
 	public String toString() {
-		return "Tanuló: " + name + ", " + money;
+		return "Tanuló: " + name + ", egyenleg: " + money;
 	}
 
 	public boolean fogyasztas(int dec) {
@@ -44,5 +50,7 @@ public class Tanulo {
 		} else
 			return false;
 	}
+	
+
 
 }
