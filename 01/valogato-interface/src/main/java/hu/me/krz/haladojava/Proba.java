@@ -18,36 +18,36 @@ public class Proba {
 		}
 		
 		sc.close();
+		
+		Valogato[] szemelyek = new Valogato[db];
 
-		Diak[] diakok = new Diak[db];
-		Tanar[] tanarok = new Tanar[db];
-
-		for (int i = 0; i < diakok.length; i++) {
+		for (int i = 0; i < szemelyek.length; i++) {
 			String name = "diák" + (i + 1);
 			Random r = new Random();
 			int age = r.nextInt(80 - 16 + 1) + 16;
-			int puska = r.nextInt(6 - 0) % 6;
-			diakok[i] = new Diak(name, age, puska);
+			
+			if(age %2 == 0) {
+				int puska = r.nextInt(6 - 0) % 6;
+				szemelyek[i] = new Diak(name, age, puska);
+			} else {
+				double vizsgajegyavg = r.nextDouble()*5;
+				szemelyek[i] = new Tanar(name, age, vizsgajegyavg);
+			}
+			
 		}
 
-		for (int i = 0; i < tanarok.length; i++) {
-			String name = "tanár" + (i + 1);
-			Random r = new Random();
-			int age = r.nextInt(80 - 25 + 1) + 25;
-			double avg = r.nextDouble() * (5 - 1) + 1;
-			tanarok[i] = new Tanar(name, age, avg);
-		}
+	
 
-		for (Diak d : diakok) {
+		for (Valogato d : szemelyek) {
 			if (d.joAlanyE()) {
-				System.out.println(d);
+				System.out.print("jó alany: ");
+			} else {
+			System.out.print("nem jó alany: ");
 			}
+			System.out.println(d);
 		}
 
-		for (Tanar t : tanarok) {
-			if (t.joAlanyE()) {
-				System.out.println(t);
-			}
+	
 		}
 	}
-}
+
