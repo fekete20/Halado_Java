@@ -2,12 +2,14 @@ package main.java;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class UseRepository implements UserModify {
     private List<User> users = new ArrayList<>();
+    Logger log = Logger.getLogger(Komplex.class.toString());
 
     public void save(User user) {
-        System.out.println(user.getName() + " mentve");
+        log.info(user.getName() + " mentve");
         users.add(user);
     }
 

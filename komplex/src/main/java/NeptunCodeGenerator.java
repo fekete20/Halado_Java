@@ -5,4 +5,7 @@ public class NeptunCodeGenerator {
     public static int getNextCounter() {
         return counter++;
     }
+
+    private NeptunCodeGenerator() {
+    }
 }
