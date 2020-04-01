@@ -7,7 +7,7 @@ public class UseRepository implements UserModify {
     private List<User> users = new ArrayList<>();
 
     public void save(User user) {
-        System.out.printf("%s mentve%n", user.getName());
+        System.out.println(user.getName() + " mentve");
         users.add(user);
     }
 

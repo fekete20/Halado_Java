@@ -2,8 +2,7 @@ package main.java;
 
 public class NeptunCodeGenerator {
     private static int counter = 0;
-
-    public int getNextCounter() {
+    public static int getNextCounter() {
         return counter++;
     }
 }
