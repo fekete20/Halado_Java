@@ -1,4 +1,5 @@
-package main.java;
+package komplex;
+//package main.java;
 
 public interface UserModify {
     void save(User user);
