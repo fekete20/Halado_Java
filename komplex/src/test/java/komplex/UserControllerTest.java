@@ -1,32 +1,32 @@
 package komplex;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class UserControllerTest {
 
+	UserService userService = mock(UserService.class);
+	NeptunCodeGenerator neptunCodeGenerator = mock(NeptunCodeGenerator.class);
+
+	UserController userController = new UserController(userService, neptunCodeGenerator);
+
 	@Test
 	void constructorTest() {
-	//	User u = mock(User.class)
-	//	UserService us = mock(UserService.class);
-	//	NeptunCodeGenerator ncg = mock(NeptunCodeGenerator.class);
-		
-	//	UserController uc = new UserController()
+		UserService userService = mock(UserService.class);
+		NeptunCodeGenerator neptunCodeGenerator = mock(NeptunCodeGenerator.class);
+		UserController userController = new UserController(userService, neptunCodeGenerator);
+
 	}
-	
+
 	@Test
 	void testSave() {
-		UserController uc = mock(UserController.class);
-		UserDto udto =  new UserDto("ASDFsdghfhrtgj");
-		
-	
-		doNothing().when(uc).save(udto); 	
-		
-		verify(uc, times(1));
-	
+
+		UserDto userDto = mock(UserDto.class);
+		userController.save(userDto);
+		verify(userService, times(1)).save(Mockito.any(User.class));
+
 	}
 
 }

@@ -10,20 +10,20 @@ class SpaceValidatorTest {
 	@Test
 	void test() {
 		User user = mock(User.class);
-		
-		SpaceValidator sv = new SpaceValidator();
+
+		SpaceValidator spaceValidator = new SpaceValidator();
 		when(user.getName()).thenReturn("ERfedgdxg");
-		assertEquals(sv.isValid(user), true);
+		assertEquals(spaceValidator.isValid(user), true);
 
 	}
-	
+
 	@Test
 	void test1() {
-		 User user = mock(User.class);
-		
-		SpaceValidator sv = new SpaceValidator();
+		User user = mock(User.class);
+
+		SpaceValidator spaceValidator = new SpaceValidator();
 		when(user.getName()).thenReturn("ERrt sedf");
-		assertEquals(sv.isValid(user), false);
+		assertEquals(spaceValidator.isValid(user), false);
 
 	}
 

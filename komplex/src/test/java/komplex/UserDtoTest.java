@@ -11,34 +11,31 @@ class UserDtoTest {
 
 	@Test
 	void testUserDto() {
-		
-		//UserDto = new UserDto()
-		String a = "";
-		UserDto ud = new UserDto(a);
-		
-		assertEquals(ud.getName(), "");
-	
-		
-		
+
+		String string = "vmi";
+		UserDto userDto = new UserDto(string);
+
+		assertEquals(userDto.getName(), "vmi");
+
 	}
 
 	@Test
 	void testGetName() {
-		
-	//	UserDto udt = mock(UserDto.class);
-		UserDto udt = new UserDto("asd");
-	//	when(udt.getName()).thenReturn("asd");
-		assertEquals(udt.getName(), "asd");
-		
+
+		// UserDto userDto = mock(UserDto.class);
+		UserDto userDto = new UserDto("jhkjlg");
+		// when(userDto.getName()).thenReturn("asd");
+		assertEquals(userDto.getName(), "jhkjlg");
+
 	}
 
 	@Test
 	void testSetName() {
-		UserDto u = new UserDto("maki");
-		String v = "aasdfgh";
-		u.setName(v);
-		assertEquals(u.getName(), "aasdfgh");
-		
+		UserDto userDto = new UserDto("sidufhhd");
+		String string = "uzkouihbhhr";
+		userDto.setName(string);
+		assertEquals(userDto.getName(), "uzkouihbhhr");
+
 	}
 
 }
