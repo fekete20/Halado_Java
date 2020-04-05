@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>calculator</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>calculator_webapp_assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>calculator</name>
 	<description>Spring Boot calculator assignment project</description>
