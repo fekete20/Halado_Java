@@ -1,9 +1,11 @@
 package calculator.model;
 
+import java.math.BigDecimal;
+
 public class CalculatorModel {
 
-	private double a;
-	private double b;
+	private BigDecimal a;
+	private BigDecimal b;
 	private String op;
 
 	public CalculatorModel() {
@@ -14,24 +16,24 @@ public class CalculatorModel {
 		this.op = op;
 	}
 
-	public CalculatorModel(double a, double b) {
+	public CalculatorModel(BigDecimal a, BigDecimal b) {
 		this.a = a;
 		this.b = b;
 	}
 
-	public double getA() {
+	public BigDecimal getA() {
 		return a;
 	}
 
-	public void setA(double a) {
+	public void setA(BigDecimal a) {
 		this.a = a;
 	}
 
-	public double getB() {
+	public BigDecimal getB() {
 		return b;
 	}
 
-	public void setB(double b) {
+	public void setB(BigDecimal b) {
 		this.b = b;
 	}
 

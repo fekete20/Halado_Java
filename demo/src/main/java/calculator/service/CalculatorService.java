@@ -3,33 +3,34 @@ package calculator.service;
 import org.springframework.stereotype.Service;
 
 import calculator.model.CalculatorModel;
+import java.math.BigDecimal;
 
 @Service
 public class CalculatorService {
 
-	public double add(CalculatorModel m) {
-		return m.getA() + m.getB();
+	public BigDecimal add(CalculatorModel calculatorModel) {
+		return calculatorModel.getA().add(calculatorModel.getB());
 	}
 
-	public double subtract(CalculatorModel m) {
-		return m.getA() - m.getB();
+	public BigDecimal subtract(CalculatorModel calculatorModel) {
+		return calculatorModel.getA().subtract(calculatorModel.getB());
 	}
 
-	public double multiply(CalculatorModel m) {
-		return m.getA() * m.getB();
+	public BigDecimal multiply(CalculatorModel calculatorModel) {
+		return calculatorModel.getA().multiply(calculatorModel.getB());
 	}
 
-	public double divide(CalculatorModel m) {
-		if (m.getA() == 0)
+	public double divide(CalculatorModel calculatorModel) {
+		if (calculatorModel.getA().intValue() == 0)
 			return 0;
-		if (m.getB() == 0)
+		if (calculatorModel.getB().intValue() == 0)
 			return Double.POSITIVE_INFINITY;
-		return (double) m.getA() / m.getB();
+		return calculatorModel.getA().doubleValue() / calculatorModel.getB().doubleValue();
 	}
 
-	public CalculatorModel reset(CalculatorModel m) {
-		m.setA(0);
-		m.setB(0);
-		return m;
+	public CalculatorModel reset(CalculatorModel calculatorModel) {
+		calculatorModel.setA(BigDecimal.ZERO);
+		calculatorModel.setB(BigDecimal.ZERO);
+		return calculatorModel;
 	}
 }
