@@ -1,6 +1,5 @@
 package console;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
 import calculator.model.CalculatorModel;
@@ -10,40 +9,40 @@ public class ConsoleApp {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		CalculatorService g = new CalculatorService();
-		CalculatorModel m = new CalculatorModel();
-		double eredmeny = 0;
+		CalculatorService calculatorService = new CalculatorService();
+		CalculatorModel calculatorModel = new CalculatorModel();
+		double result = 0;
 
-		System.out.println("Adja meg az elvégzendő műveletet műveleti jellel!");
+		System.out.println("Adja meg az elvégzendő műveletet műveleti jellel kezdve!");
 
-		m.setOp(sc.next());
-		m.setA(sc.nextBigDecimal());
-
-		m.setB(sc.nextBigDecimal());
+		calculatorModel.setOp(sc.next());
+		calculatorModel.setA(sc.nextBigDecimal());
+		calculatorModel.setB(sc.nextBigDecimal());
 		sc.close();
 
-		System.out.println(m.getOp() + " " + m.getA() + " " + m.getB());
+		System.out.println("A következő művelet lesz elvégezve: " + calculatorModel.getOp() + " "
+				+ calculatorModel.getA() + " " + calculatorModel.getB());
 
-		switch (m.getOp()) {
+		switch (calculatorModel.getOp()) {
 		case "+":
-			eredmeny = g.add(m).doubleValue();
+			result = calculatorService.add(calculatorModel).doubleValue();
 			break;
 		case "-":
-			eredmeny = g.subtract(m).doubleValue();
+			result = calculatorService.subtract(calculatorModel).doubleValue();
 			break;
 		case "*":
-			eredmeny = g.multiply(m).doubleValue();
+			result = calculatorService.multiply(calculatorModel).doubleValue();
 			break;
 		case "/":
 
-			eredmeny = g.divide(m);
+			result = calculatorService.divide(calculatorModel);
 			break;
 		default:
-			System.out.println("elegem van");
+			System.err.println("Nem definiált művelet.");
 
 		}
 
-		System.out.println("Eredmény: " + eredmeny);
+		System.out.println("Eredmény: " + result);
 
 	}
 
